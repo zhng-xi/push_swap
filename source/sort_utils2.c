@@ -6,7 +6,7 @@
 /*   By: xzheng <xzheng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 23:50:50 by xzheng            #+#    #+#             */
-/*   Updated: 2024/05/04 13:37:22 by xzheng           ###   ########.fr       */
+/*   Updated: 2024/05/04 20:41:44 by xzheng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int	get_steps_ab(t_stack **stack_a, t_stack **stack_b)
 {
+	int	size;
+
+	size = stack_size(*stack_b);
 	(*stack_a)->steps = find_index(*stack_b, find_match_ab(stack_a, stack_b));
 	if ((*stack_a)->steps < calc_a(stack_a))
 		(*stack_a)->steps = calc_a(stack_a);
@@ -22,6 +25,9 @@ int	get_steps_ab(t_stack **stack_a, t_stack **stack_b)
 
 int	get_steps_ba(t_stack **stack_a, t_stack **stack_b)
 {
+	int	size;
+
+	size = stack_size(*stack_a);
 	(*stack_b)->steps = find_index(*stack_a, find_match_ba(stack_a, stack_b));
 	if ((*stack_b)->steps < calc_b(stack_b))
 		(*stack_b)->steps = calc_b(stack_b);

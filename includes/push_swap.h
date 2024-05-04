@@ -6,14 +6,14 @@
 /*   By: xzheng <xzheng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 09:10:40 by xzheng            #+#    #+#             */
-/*   Updated: 2024/05/04 17:22:22 by xzheng           ###   ########.fr       */
+/*   Updated: 2024/05/04 20:41:16 by xzheng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../includes/ft_printf/ft_printf.h"
+# include "../includes/libft/ft_printf/ft_printf.h"
 # include "../includes/libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
@@ -26,6 +26,7 @@ typedef struct s_stack
 {
 	int				nb;
 	int				io;
+	int				index;
 	int				cost;
 	int				match;
 	int				steps;
@@ -76,6 +77,7 @@ long	stack_size(t_stack *stack);
 int		get_mid(t_stack *stack);
 
 // sort_utils
+void	get_order(t_stack **stack);
 int		calc_a(t_stack **stack_a);
 int		calc_b(t_stack **stack_b);
 int		find_match_ab(t_stack **stack_a, t_stack **stack_b);

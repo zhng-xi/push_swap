@@ -1,7 +1,7 @@
 NAME	= push_swap
 CFLAGS	= -Wall -Wextra -Werror -g
 LIBFT	= cd includes/libft
-PRINTF	= cd includes/ft_printf
+PRINTF	= cd includes/libft/ft_printf
 SRCS	= source/push_swap.c \
 			source/ft_atol.c \
 			source/fill_stack.c \
@@ -22,7 +22,7 @@ OBJS		= $(SRCS:.c=.o)
 $(NAME): $(OBJS)
 			@$(LIBFT) && make all
 			@$(PRINTF) && make all
-			cc $(CFLAGS) $(SRCS) -o $(NAME) includes/ft_printf/libftprintf.a includes/libft/libft.a
+			cc $(CFLAGS) $(SRCS) -o $(NAME) includes/libft/ft_printf/libftprintf.a includes/libft/libft.a
 			@echo "Have fun testing!"
 
 all:	$(NAME)

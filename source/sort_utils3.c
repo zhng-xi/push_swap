@@ -6,7 +6,7 @@
 /*   By: xzheng <xzheng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 14:34:08 by xzheng            #+#    #+#             */
-/*   Updated: 2024/05/04 14:55:31 by xzheng           ###   ########.fr       */
+/*   Updated: 2024/05/04 20:24:44 by xzheng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,9 @@ void	do_steps_ab(t_stack **stack_a, t_stack **stack_b)
 	int		size;
 
 	size = stack_size(*stack_a);
-	while (size-- > 3)
+	while (size > 3)
 	{
+		get_steps_ab(stack_a, stack_b);
 		best = perfect_match(*stack_a);
 		if ((best == get_steps_ab(stack_a, stack_b))
 			&& (*stack_a)->upper == true
@@ -55,5 +56,6 @@ void	do_steps_ab(t_stack **stack_a, t_stack **stack_b)
 			&& (*stack_a)->upper == false
 			&& (find_index(*stack_b, (*stack_a)->match) < get_mid(*stack_b)))
 			a_rrarrb(stack_a, stack_b, (*stack_a)->nb, (*stack_a)->match);
+		size--;
 	}
 }

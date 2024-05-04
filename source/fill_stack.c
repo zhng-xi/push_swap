@@ -6,7 +6,7 @@
 /*   By: xzheng <xzheng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 09:48:50 by xzheng            #+#    #+#             */
-/*   Updated: 2024/05/04 13:38:14 by xzheng           ###   ########.fr       */
+/*   Updated: 2024/05/04 20:13:03 by xzheng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ t_stack	*split_input(char *av)
 	stack_a = NULL;
 	i = 0;
 	tmp = ft_split(av, ' ');
-
 	if (tmp == NULL || tmp[0] == NULL)
 		error();
 	while (tmp[i])

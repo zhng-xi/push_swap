@@ -6,7 +6,7 @@
 /*   By: xzheng <xzheng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 11:34:19 by xzheng            #+#    #+#             */
-/*   Updated: 2024/05/04 14:03:43 by xzheng           ###   ########.fr       */
+/*   Updated: 2024/05/04 21:23:42 by xzheng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	start_b(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_size(*stack_a) == 4)
 		pb(stack_a, stack_b, 0);
-	else if (stack_size(*stack_a) == 5)
+	else if (stack_size(*stack_a) >= 5)
 	{
 		pb(stack_a, stack_b, 0);
 		pb(stack_a, stack_b, 0);
@@ -56,10 +56,10 @@ t_stack	*push_to_b(t_stack **stack_a, t_stack **stack_b)
 {
 	if ((*stack_b) == NULL)
 		start_b(stack_a, stack_b);
+	if (stack_size(*stack_a) > 3)
+		do_steps_ab(stack_a, stack_b);
 	if (stack_size(*stack_a) == 3)
 		sort_three(stack_a);
-	else if (stack_size(*stack_a) > 3)
-		do_steps_ab(stack_a, stack_b);
 	return (*stack_b);
 }
 
