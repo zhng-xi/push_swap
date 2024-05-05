@@ -6,7 +6,7 @@
 /*   By: xzheng <xzheng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:41:01 by xzheng            #+#    #+#             */
-/*   Updated: 2024/05/04 21:10:55 by xzheng           ###   ########.fr       */
+/*   Updated: 2024/05/05 06:39:18 by xzheng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,24 @@ int	find_index(t_stack *stack, int nb)
 		i++;
 	}
 	return (i);
+}
+
+void	set_index(t_stack **stack, int	size)
+{
+	t_stack	*tmp;
+	int		i;
+
+	tmp = (*stack);
+	i = 1;
+	while (i < size)
+	{
+		while (tmp)
+		{
+			tmp->i = i;
+			if (!tmp->next)
+				break ;
+			tmp = tmp->next;
+			i++;
+		}
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: xzheng <xzheng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 09:10:40 by xzheng            #+#    #+#             */
-/*   Updated: 2024/05/04 20:41:16 by xzheng           ###   ########.fr       */
+/*   Updated: 2024/05/05 10:34:35 by xzheng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@
 typedef struct s_stack
 {
 	int				nb;
+	int				i;
 	int				io;
-	int				index;
 	int				cost;
-	int				match;
+	int				match_a;
+	int				match_b;
 	int				steps;
 	bool			upper;
 	struct s_stack	*next;
@@ -51,6 +52,7 @@ int		get_min(t_stack *stack);
 int		get_max(t_stack *stack);
 t_stack	*find_last(t_stack *stack);
 int		find_index(t_stack *stack, int nb);
+void	set_index(t_stack **stack, int size);
 
 // ft_atol
 long	ft_atol(char *nptr);
@@ -78,14 +80,14 @@ int		get_mid(t_stack *stack);
 
 // sort_utils
 void	get_order(t_stack **stack);
-int		calc_a(t_stack **stack_a);
-int		calc_b(t_stack **stack_b);
-int		find_match_ab(t_stack **stack_a, t_stack **stack_b);
-int		find_match_ba(t_stack **stack_a, t_stack **stack_b);
+void	calc_a(t_stack **stack_a, int size);
+void	calc_b(t_stack **stack_b, int size);
+void	find_match_a(t_stack **stack_a, t_stack **store, int size);
+void	find_match_b(t_stack **stack_a, t_stack **store, int size);
 
 // sort_utils2
-int		get_steps_ab(t_stack **stack_a, t_stack **stack_b);
-int		get_steps_ba(t_stack **stack_a, t_stack **stack_b);
+void	get_steps_ab(t_stack **stack_a, t_stack **stack_b);
+void	get_steps_ba(t_stack **stack_a, t_stack **stack_b);
 int		perfect_match(t_stack *stack_a);
 
 // sort_utils3
